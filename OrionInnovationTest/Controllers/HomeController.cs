@@ -30,8 +30,8 @@ namespace OrionInnovationTest.Controllers
         public IActionResult ReadText(TextDto dto)
         {
             var service = ImplementationFactory.Create(_services, dto.Implementation);
-            var numberPfWords = service.Read(dto.Text);
-            return Ok();
+            var numberOfWords = service.Read(dto.Text);
+            return Ok("There are "+ numberOfWords + " words in the text");
         }
     }
 }

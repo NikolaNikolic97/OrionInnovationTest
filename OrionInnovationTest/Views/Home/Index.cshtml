@@ -2,27 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
 <form class="form-horizontal">
     <fieldset>
 
         <h2>Data base</h2>
         <!-- Button -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="singlebutton">Read text from data base</label>
+            <label class="col-md-4 control-label" for="dataBase">Read text from data base</label>
             <div class="col-md-4">
-                <button id="dataBase" name="singlebutton" class="btn btn-primary">Button</button>
+                <p id="database_result"></p>
+                <button id="dataBase"  class="btn btn-primary">Button</button>
             </div>
         </div>
         <h2>File</h2>
         <!-- Button -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="singlebutton">Read text from file</label>
+            <label class="col-md-4 control-label" for="file">Read text from file</label>
             <div class="col-md-4">
-                <button id="file" name="singlebutton" class="btn btn-primary">Button</button>
+                <p id="file_result"></p>
+                <button id="file"  class="btn btn-primary">Button</button>
             </div>
         </div>
         <!-- Form Name -->
@@ -31,8 +29,8 @@
         <!-- Text input-->
         <div class="form-group">
             <div class="col-md-4">
-                <input id="user_input_text" name="product_id" placeholder="Enter some text" class="form-control input-md" required="" type="text">
-
+                <p id="user_input_result"></p>
+                <input id="user_input_text" placeholder="Enter some text" class="form-control input-md" type="text">
             </div>
         </div>
 

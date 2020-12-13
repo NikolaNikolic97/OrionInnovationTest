@@ -1,11 +1,12 @@
 ﻿using Logic;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Implementation
 {
-    public class ReadTextFile : IReadService
+    public class ReadTextFile : BaseImplementation,IReadService
     {
         private readonly string _path;
         public ReadTextFile(string path)
@@ -14,7 +15,8 @@ namespace Implementation
         }
         public int Read(string text)
         {
-            throw new NotImplementedException();
+            var allText = File.ReadAllText(_path);
+            return CalculateNumberOfWords(allText.Trim());
         }
     }
 }

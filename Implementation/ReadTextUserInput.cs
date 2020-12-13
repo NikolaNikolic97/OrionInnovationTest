@@ -5,11 +5,15 @@ using System.Text;
 
 namespace Implementation
 {
-    public class ReadTextUserInput : IReadService
+    public class ReadTextUserInput : BaseImplementation,IReadService
     {
         public int Read(string text)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(text))
+            {
+                throw new Exception("There is no text sent.");
+            }
+            return CalculateNumberOfWords(text.Trim());
         }
     }
 }

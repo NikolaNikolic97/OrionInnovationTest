@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Implementation
 {
-    public class ReadTextDb : IReadService
+    public class ReadTextDb : BaseImplementation,IReadService
     {
         private readonly Context _context;
         public ReadTextDb(Context context)
@@ -15,7 +15,8 @@ namespace Implementation
         }
         public int Read(string text)
         {
-            throw new NotImplementedException();
+            var allText = _context.Texts.Find(1).AllText.Trim();
+            return CalculateNumberOfWords(allText);
         }
     }
 }
