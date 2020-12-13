@@ -9,7 +9,7 @@ namespace DataAccess
 {
     public class Context : DbContext
     {
-        public DbSet<Text> Products { get; set; }
+        public DbSet<Text> Texts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
@@ -18,6 +18,15 @@ namespace DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var text = new List<Text>
+            {
+                new Text
+                {
+                    Id = 1,
+                    AllText = "Test test test test test "
+                }
+            };
+            modelBuilder.Entity<Text>().HasData(text);
             modelBuilder.ApplyConfiguration(new TextConfiguration());
         }
     }
